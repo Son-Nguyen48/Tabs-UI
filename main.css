@@ -32,31 +32,33 @@ body {
   justify-content: space-between;
   font-size: 2.2rem;
   color: #c23564;
-  position: relative;
 }
 
 .tab {
   opacity: 0.6;
-  border-bottom: 0.6rem solid transparent;
   border-radius: 0.6rem;
   padding: 1.2rem;
   width: 100%;
+  position: relative;
 }
 
 .tab:hover {
   opacity: 1;
-  border-bottom: 0.6rem solid #f6e1e7;
   background-color: #fcf5f7;
   cursor: pointer;
 }
 
+.tab:hover .line-border {
+  display: block;
+}
+
 .line-border {
+  width: 100%;
+  height: 0.6rem;
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 0.6rem;
   background-color: #c23564;
-  width: 0%;
   border-radius: 0.4rem;
 }
 
@@ -69,15 +71,18 @@ body {
   display: none;
 }
 
-.content.active {
+.content.active-content {
   display: block;
 }
 
-.tabs .active {
+.line-border {
+  display: none;
+}
+.tab.active {
   opacity: 1;
-  border-bottom: 0.6rem solid #f6e1e7;
-  background-color: #fcf5f7;
-  cursor: pointer;
+}
+.tab.active .line-border {
+  display: block;
 }
 
 @media (max-width: 965px) {
